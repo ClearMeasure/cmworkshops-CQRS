@@ -4,7 +4,7 @@
 Framework "4.0"
 
 properties {
-	$projectName = "IterationZero"
+	$projectName = "CqrsWorkshop"
     $unitTestAssembly = "UnitTests.dll"
     $integrationTestAssembly = "IntegrationTests.dll"
     $fullSystemTestAssembly = "FullSystemTests.dll"
@@ -20,7 +20,7 @@ properties {
 	$package_file = "$build_dir\latestVersion\" + $projectName +"_Package.zip"
 	
     $databaseName = $projectName
-	$databaseServer = "localhost\sqlexpress2012"
+	$databaseServer = "localhost\sqlexpress2014"
 	$databaseScripts = "$source_dir\Database\scripts"
 	$hibernateConfig = "$source_dir\hibernate.cfg.xml"
 	$schemaDatabaseName = $databaseName + "_schema"
