@@ -3,6 +3,7 @@
 /src/API/bin/*
 /src/API/obj/*
 /src/Core.Tests/obj/*
+/src/Core.Tests/bin/*
 
 
 /src/Web.IntegrationTests/bin/*
@@ -15,3 +16,5 @@
 /src/Core/bin/*
 /src/Web/bin/*
 /src/Web/obj/*
+/src/database/bin/*
+/src/database/obj/*
