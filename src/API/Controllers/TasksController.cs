@@ -24,8 +24,9 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Route("{id:guid}", Name = "Get")]
         [ResponseType(typeof(TaskResponse))]
-        public Task Get(int id)
+        public Task Get(Guid id)
         {
             return new Task();
         }
@@ -41,32 +42,32 @@ namespace API.Controllers
         [ResponseType(typeof(AcceptedResult))]
         public IHttpActionResult Post([FromBody]TaskRequest value)
         {
-            var savedTaskId = Guid.NewGuid(); // We need to save the object here or send the command and get the id to return via the Url.Link
+            Guid savedTaskId = Guid.NewGuid(); // We need to save the object here or send the command and get the id to return via the Url.Link
             var uri = new Uri(Url.Link("Get", new { id = savedTaskId }));
             return new AcceptedResult(Request, uri);
         }
 
         [HttpPut]
-        [Route("{guid:id}/publish")]
-        public void Put(int id)
+        [Route("{id:guid}/publish")]
+        public void Put(Guid id)
         {
         }
 
         [HttpPut]
-        [Route("{guid:id}/cancel")]
-        public void Cancel(int id)
+        [Route("{id:guid}/cancel")]
+        public void Cancel(Guid id)
         {
         }
 
         [HttpPut]
-        [Route("{guid:id}/accept")]
-        public void Accept(int id)
+        [Route("{id:guid}/accept")]
+        public void Accept(Guid id)
         {
         }
 
         [HttpPut]
-        [Route("{guid:id}/complete")]
-        public void Complete(int id)
+        [Route("{id:guid}/complete")]
+        public void Complete(Guid id)
         {
         }
 

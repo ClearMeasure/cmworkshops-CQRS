@@ -19,7 +19,7 @@ namespace Core.Responses
             Comments = task.Comments;
             TaskState = task.TaskState;
         }
-        public int TaskId { get; set; }
+        public Guid TaskId { get; set; }
         List<User> Users { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
