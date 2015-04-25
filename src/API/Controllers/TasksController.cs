@@ -8,6 +8,7 @@ using System.Web.Http.Description;
 using Core.Responses;
 using Core.Tasks;
 using Core.Users;
+using LightSail.Api.ActionResults;
 
 namespace API.Controllers
 {
@@ -37,9 +38,12 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody]Task value)
+        [ResponseType(typeof(AcceptedResult))]
+        public IHttpActionResult Post([FromBody]TaskRequest value)
         {
-            
+            var savedTaskId = Guid.NewGuid(); // We need to save the object here or send the command and get the id to return via the Url.Link
+            var uri = new Uri(Url.Link("Get", new { id = savedTaskId }));
+            return new AcceptedResult(Request, uri);
         }
 
         [HttpPut]
