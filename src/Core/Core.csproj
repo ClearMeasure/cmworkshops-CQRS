@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\TaskRequest.cs" />
     <Compile Include="Responses\TaskResponse.cs" />
     <Compile Include="Tasks\State.cs" />
     <Compile Include="Tasks\Task.cs" />

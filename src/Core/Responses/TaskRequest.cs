@@ -7,11 +7,10 @@ using Core.Users;
 
 namespace Core.Responses
 {
-    public class TaskResponse
+    public class TaskRequest
     {
-        public TaskResponse(Task task)
+        public TaskRequest(Task task)
         {
-            TaskId = task.TaskId;
             Users = task.Users;
             Description = task.Description;
             DueDate = task.DueDate;
@@ -19,7 +18,6 @@ namespace Core.Responses
             Comments = task.Comments;
             TaskState = task.TaskState;
         }
-        public Guid TaskId { get; set; }
         List<User> Users { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }

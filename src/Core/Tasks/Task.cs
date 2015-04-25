@@ -9,7 +9,7 @@ namespace Core.Tasks
 {
     public class Task
     {
-        public int TaskId { get; set; }
+        public Guid TaskId { get; set; }
         public List<User> Users { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
