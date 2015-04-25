@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersionAttribute("1.0.0.0")]
 [assembly: AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: AssemblyCopyrightAttribute("Copyright 2014")]
-[assembly: AssemblyProductAttribute("CqrsWorkshop")]
+[assembly: AssemblyProductAttribute("Cqrs-Workshop")]
 [assembly: AssemblyCompanyAttribute("Clear Measure, Inc.")]
 [assembly: AssemblyConfigurationAttribute("release")]
 [assembly: AssemblyInformationalVersionAttribute("1.0.0.0")]
