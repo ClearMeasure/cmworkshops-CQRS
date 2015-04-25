@@ -4,11 +4,11 @@
 Framework "4.0"
 
 properties {
-	$projectName = "CqrsWorkshop"
+	$projectName = "Cqrs-Workshop"
     $unitTestAssembly = "UnitTests.dll"
     $integrationTestAssembly = "IntegrationTests.dll"
     $fullSystemTestAssembly = "FullSystemTests.dll"
-	$projectConfig = "Release"
+	$projectConfig = "Debug"
 	$base_dir = resolve-path .\
 	$source_dir = "$base_dir\src"
     $nunitPath = "$source_dir\packages\NUnit.2.5.9.10348\Tools"
@@ -28,8 +28,8 @@ properties {
 	$connection_string = "server=$databaseserver;database=$databasename;Integrated Security=true;"
 }
 
-task default -depends Init, CommonAssemblyInfo, Compile, RebuildDatabase, Test, LoadData
-task ci -depends Init, CommonAssemblyInfo, Compile, RebuildDatabase, Test, LoadData, Package
+task default -depends Init, CommonAssemblyInfo, Compile #, RebuildDatabase, Test, LoadData
+task ci -depends Init, CommonAssemblyInfo, Compile #, RebuildDatabase, Test, LoadData, Package
 
 task Init {
     delete_file $package_file
@@ -41,7 +41,7 @@ task Init {
 task ConnectionString {
 	$connection_string = "server=$databaseserver;database=$databasename;Integrated Security=true;"
 	write-host "Using connection string: $connection_string"
-	poke-xml $hibernateConfig "//e:property[@name = 'connection.connection_string']" $connection_string @{"e" = "urn:nhibernate-configuration-2.2"}
+	#poke-xml $hibernateConfig "//e:property[@name = 'connection.connection_string']" $connection_string @{"e" = "urn:nhibernate-configuration-2.2"}
 }
 
 task Compile -depends Init {

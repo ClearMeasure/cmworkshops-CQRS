@@ -15,3 +15,6 @@
 /src/Core/bin/*
 /src/Web/bin/*
 /src/Web/obj/*
+/src/database/bin/*
+/src/database/obj/*
+/src/Core.Tests/bin/Debug/nunit.framework.xml
