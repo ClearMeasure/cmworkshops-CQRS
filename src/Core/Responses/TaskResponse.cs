@@ -20,7 +20,7 @@ namespace Core.Responses
             TaskState = task.TaskState;
         }
         public Guid TaskId { get; set; }
-        List<User> Users { get; set; }
+        List<Guid> Users { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
         public DateTime CompletedDate { get; set; }

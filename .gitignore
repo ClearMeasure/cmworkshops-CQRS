@@ -4,7 +4,8 @@
 /src/API/obj/*
 /src/Core.Tests/obj/*
 /src/Core.Tests/bin/*
-
+/src/Infrastructure.Tests/bin/*
+/src/Infrastructure.Tests/obj/*
 
 /src/Web.IntegrationTests/bin/*
 

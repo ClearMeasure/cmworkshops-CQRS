@@ -18,7 +18,7 @@ namespace Core.Responses
             Comments = task.Comments;
             TaskState = task.TaskState;
         }
-        List<User> Users { get; set; }
+        List<Guid> Users { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
         public DateTime CompletedDate { get; set; }

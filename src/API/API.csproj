@@ -297,6 +297,10 @@
       <Project>{9aa33b3e-5901-4b82-ba06-b04aaefb0028}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{fdcfe028-672b-44aa-854d-d83339ed36c1}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

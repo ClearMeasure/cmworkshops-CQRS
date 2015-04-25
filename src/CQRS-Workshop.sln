@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0A6572
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Tests", "Infrastructure.Tests\Infrastructure.Tests.csproj", "{F9D760C7-4E30-4ED7-B716-9901F32726B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{79B7CC06-CC66-41EE-AA45-3F5AACE80F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B7CC06-CC66-41EE-AA45-3F5AACE80F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B7CC06-CC66-41EE-AA45-3F5AACE80F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9D760C7-4E30-4ED7-B716-9901F32726B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9D760C7-4E30-4ED7-B716-9901F32726B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9D760C7-4E30-4ED7-B716-9901F32726B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9D760C7-4E30-4ED7-B716-9901F32726B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
