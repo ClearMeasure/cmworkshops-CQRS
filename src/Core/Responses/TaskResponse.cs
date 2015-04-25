@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Core.Tasks;
 using Core.Users;
 
-namespace Core.Tasks
+namespace Core.Responses
 {
-    public class Task
+    public class TaskResponse
     {
+        public TaskResponse(Task task)
+        {
+            TaskId = task.TaskId;
+            Users = task.Users;
+        }
         public int TaskId { get; set; }
-        public List<User> Users { get; set; }
+        List<User> Users { get; set; }
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
         public DateTime CompletedDate { get; set; }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
+using Core.Responses;
 using Core.Tasks;
 using Core.Users;
 
@@ -14,18 +16,21 @@ namespace API.Controllers
     public class TasksController : ApiController
     {
         [HttpGet]
+        [ResponseType(typeof(IEnumerable<TaskResponse>))]
         public IEnumerable<Task> Get()
         {
             return new List<Task>() {new Task()};
         }
 
         [HttpGet]
+        [ResponseType(typeof(TaskResponse))]
         public Task Get(int id)
         {
             return new Task();
         }
 
         [HttpGet]
+        [ResponseType(typeof(TaskResponse))]
         public Task Get(User user)
         {
             return new Task();
