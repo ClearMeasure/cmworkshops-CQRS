@@ -5,32 +5,61 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Core.Tasks;
+using Core.Users;
 
 namespace API.Controllers
 {
     [Authorize]
+    [Route("api/tasks")]
     public class TasksController : ApiController
     {
-        // GET api/tasks
+        [HttpGet]
         public IEnumerable<Task> Get()
         {
             return new List<Task>() {new Task()};
         }
 
-        // GET api/tasks/5
+        [HttpGet]
         public Task Get(int id)
         {
             return new Task();
         }
 
-        // POST api/tasks
+        [HttpGet]
+        public Task Get(User user)
+        {
+            return new Task();
+        }
+
+        [HttpPost]
         public void Post([FromBody]Task value)
+        {
+            
+        }
+
+        [HttpPut]
+        [Route("{guid:id}/publish")]
+        public void Put(int id)
         {
         }
 
-        // PUT api/tasks/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        [Route("{guid:id}/cancel")]
+        public void Cancel(int id)
         {
         }
+
+        [HttpPut]
+        [Route("{guid:id}/accept")]
+        public void Accept(int id)
+        {
+        }
+
+        [HttpPut]
+        [Route("{guid:id}/complete")]
+        public void Complete(int id)
+        {
+        }
+
     }
 }
