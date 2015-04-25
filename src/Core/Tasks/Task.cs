@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Users;
 
-namespace Core
+namespace Core.Tasks
 {
-    public class Class1
+    public class Task
     {
+        List<User> Users { get; set; }
+
     }
 }
