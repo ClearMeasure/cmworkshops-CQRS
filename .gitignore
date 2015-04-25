@@ -1,0 +1,17 @@
+/src/API.IntegrationTests/bin/*
+/src/API.IntegrationTests/obj/*
+/src/API/bin/*
+/src/API/obj/*
+/src/Core.Tests/obj/*
+
+
+/src/Web.IntegrationTests/bin/*
+
+/src/Web.IntegrationTests/obj/*
+/src/Infrastructure/bin/*
+/src/Infrastructure/obj/*
+/src/Core/obj/*
+
+/src/Core/bin/*
+/src/Web/bin/*
+/src/Web/obj/*
