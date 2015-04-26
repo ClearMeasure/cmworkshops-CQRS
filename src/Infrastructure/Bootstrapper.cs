@@ -13,8 +13,8 @@ namespace Infrastructure
                 s.AssemblyContainingType<IMediator>();
                 s.TheCallingAssembly();
                 s.WithDefaultConventions();
-                s.AddAllTypesOf(typeof(IQueryHandler<,>));
-                s.AddAllTypesOf(typeof(ICommandHandler<>));
+                s.AddAllTypesOf(typeof(ShortBus.IAsyncRequestHandler<,>));
+                s.AddAllTypesOf(typeof(ShortBus.INotificationHandler<>));
             }));   
         }
     }
