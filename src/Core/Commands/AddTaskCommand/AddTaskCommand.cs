@@ -41,6 +41,7 @@ namespace Core.Commands.AddTaskCommand
         {
             TaskId = taskId;
         }
+        
         public Guid TaskId { get; set; }
     }
 }

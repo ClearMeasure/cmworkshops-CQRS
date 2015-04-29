@@ -12,7 +12,9 @@ namespace Core.Commands.AddTaskCommand
 
         public Task<AddTaskResult> HandleAsync(AddTaskCommand request)
         {
-            throw new NotImplementedException();
+            var reponse = new AddTaskResult(Guid.NewGuid());
+
+            return Task.FromResult(reponse);
         }
     }
 }

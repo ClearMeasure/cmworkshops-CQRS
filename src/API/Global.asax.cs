@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -13,7 +14,7 @@ using ShortBus.StructureMap;
 using StructureMap;
 using ShortBus.StructureMap;
 using StructureMap;
-    
+using StructureMap.Graph;
 using IDependencyResolver = ShortBus.IDependencyResolver;
 
 namespace API
@@ -26,18 +27,24 @@ namespace API
             {
                 init.Scan(x =>
                 {
-                    x.AssemblyContainingType<IMediator>();
+                    x.AssemblyContainingType(typeof(IAsyncRequestHandler<,>));
+                    x.AssemblyContainingType(typeof(IAsyncRequest<>));
+
+                    x.Assembly("Core");
+                    x.LookForRegistries();
+
                     x.WithDefaultConventions();
-                    x.AddAllTypesOf(typeof(IRequestHandler<,>));
+                    x.TheCallingAssembly();
+                    x.AddAllTypesOf(typeof(IAsyncRequest<>));
                     x.AddAllTypesOf(typeof(IAsyncRequestHandler<,>));
                     x.AddAllTypesOf(typeof(INotificationHandler<>));
                     x.AddAllTypesOf(typeof(IAsyncNotificationHandler<>));
                 });
-
-                init.For<IDependencyResolver>().Use<StructureMapDependencyResolver>();
-                init.For<IHttpControllerActivator>().Use<ControllerActivator>();
-                init.Policies.SetAllProperties(x => x.OfType<IMediator>());
+                init.For<IDependencyResolver>().Use<ShortBus.StructureMap.StructureMapDependencyResolver>();
+                init.Policies.SetAllProperties(x => x.OfType<API.Application.IMediator>());
             });
+
+            Debug.WriteLine(ObjectFactory.Container.WhatDoIHave());
             
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

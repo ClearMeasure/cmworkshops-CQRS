@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandsRegistry.cs" />
     <Compile Include="Commands\AddTaskCommand\AddTaskCommand.cs" />
     <Compile Include="Commands\AddTaskCommand\AddTaskCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

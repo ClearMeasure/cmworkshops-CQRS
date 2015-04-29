@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using API.Application;
 using Core.Commands.AddTaskCommand;
 using Core.Responses;
-using Core.Tasks;
 using Core.Users;
 using LightSail.Api.ActionResults;
 using ShortBus;
+using Task = Core.Tasks.Task;
 
 namespace API.Controllers
 {
     [Route("api/tasks")]
     public class TasksController : ApiControllerBase
     {
+     
         [HttpGet]
         [ResponseType(typeof(IEnumerable<TaskResponse>))]
         public IEnumerable<Task> Get()
@@ -38,11 +41,11 @@ namespace API.Controllers
 
         [HttpPost]
         [ResponseType(typeof(AcceptedResult))]
-        public IHttpActionResult Post([FromBody]AddTaskCommand cmd)
+        public async Task<IHttpActionResult> Post([FromBody]AddTaskCommand cmd)
         {
-            var response = CommandAsync(cmd);
+            var response = await CommandAsync(cmd);
             
-            var uri = new Uri(Url.Link("Get", new { id = response.Id }));
+            var uri = new Uri(Url.Link("Get", new { id = response.TaskId }));
             return new AcceptedResult(Request, uri);
         }
 
